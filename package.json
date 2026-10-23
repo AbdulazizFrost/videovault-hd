@@ -1,0 +1,16 @@
+{
+  "name": "videovault-hd",
+  "version": "1.0.0",
+  "description": "VideoVault HD - Modern local video library and downloader",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -k -n \"SERVER,CLIENT\" -c \"magenta,cyan\" \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build && npm --prefix server run build",
+    "start": "npm --prefix server run start",
+    "check-env": "node -e \"console.log('Node version: ' + process.version)\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
